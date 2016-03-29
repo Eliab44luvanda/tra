@@ -1,0 +1,828 @@
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response agri_r :
+
+Call:
+lm(formula = agri_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.38166 -0.04684  0.01258  0.06665  0.14736 
+
+Coefficients:
+         Estimate Std. Error t value Pr(>|t|)    
+zragri_r 0.993276   0.021795  45.573   <2e-16 ***
+zragri   0.006498   0.013015   0.499     0.62    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.09754 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 1.807e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response agri :
+
+Call:
+lm(formula = agri ~ zr - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.4928 -0.2879  0.3182  0.4353  0.6677 
+
+Coefficients:
+         Estimate Std. Error t value Pr(>|t|)    
+zragri_r  0.32037    0.14403   2.224   0.0307 *  
+zragri    0.80851    0.08601   9.400 1.23e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6446 on 50 degrees of freedom
+Multiple R-squared:  0.9978,	Adjusted R-squared:  0.9977 
+F-statistic: 1.149e+04 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 8.7922 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response mining_r :
+
+Call:
+lm(formula = mining_r ~ zr - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.185097 -0.044763 -0.007652  0.040888  0.190933 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+zrmining_r  0.98656    0.02031   48.57   <2e-16 ***
+zrmining    0.01704    0.01852    0.92    0.362    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07925 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 4.429e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response mining :
+
+Call:
+lm(formula = mining ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.31283 -0.09023 -0.01536  0.06089  0.37524 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+zrmining_r  0.01649    0.03590   0.459    0.648    
+zrmining    0.98655    0.03274  30.129   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1401 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9998 
+F-statistic: 1.692e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 1.1832 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response manufacturing_r :
+
+Call:
+lm(formula = manufacturing_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.15760 -0.07185 -0.01282  0.05818  0.37691 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+zrmanufacturing_r  0.94830    0.02666  35.570   <2e-16 ***
+zrmanufacturing    0.05033    0.02375   2.119   0.0391 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.0959 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 3.628e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response manufacturing :
+
+Call:
+lm(formula = manufacturing ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.27922 -0.03927  0.01646  0.07250  0.17336 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+zrmanufacturing_r  0.02373    0.03218   0.737    0.464    
+zrmanufacturing    0.98026    0.02866  34.199   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1157 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 3.118e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 1.5535 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response electricity_r :
+
+Call:
+lm(formula = electricity_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.49995 -0.21021  0.01667  0.14335  1.52531 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+zrelectricity_r  0.67887    0.05199  13.057  < 2e-16 ***
+zrelectricity    0.27296    0.04292   6.359 6.04e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3076 on 50 degrees of freedom
+Multiple R-squared:  0.999,	Adjusted R-squared:  0.9989 
+F-statistic: 2.462e+04 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response electricity :
+
+Call:
+lm(formula = electricity ~ zr - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.175430 -0.031572  0.007878  0.030495  0.266842 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+zrelectricity_r  0.02140    0.01229   1.741   0.0878 .  
+zrelectricity    0.98350    0.01015  96.915   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07272 on 50 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:      1 
+F-statistic: 6.368e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 22.0073 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response construction_r :
+
+Call:
+lm(formula = construction_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.41657 -0.03957  0.00806  0.04412  0.14547 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+zrconstruction_r  1.00130    0.03117  32.122   <2e-16 ***
+zrconstruction    0.00172    0.02340   0.073    0.942    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08649 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 2.985e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response construction :
+
+Call:
+lm(formula = construction ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.58428 -0.09474  0.01532  0.11328  0.42256 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+zrconstruction_r  0.09396    0.07661   1.227    0.226    
+zrconstruction    0.93104    0.05751  16.189   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2126 on 50 degrees of freedom
+Multiple R-squared:  0.9997,	Adjusted R-squared:  0.9997 
+F-statistic: 8.733e+04 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 3.8091 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response trade_r :
+
+Call:
+lm(formula = trade_r ~ zr - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.301158 -0.039991  0.009349  0.046181  0.136052 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+zrtrade_r 1.0027027  0.0261490  38.346   <2e-16 ***
+zrtrade   0.0006673  0.0211264   0.032    0.975    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08135 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 4.414e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response trade :
+
+Call:
+lm(formula = trade ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.31977 -0.07995  0.00935  0.11044  0.22425 
+
+Coefficients:
+          Estimate Std. Error t value Pr(>|t|)    
+zrtrade_r  0.04583    0.04381   1.046    0.301    
+zrtrade    0.96450    0.03540  27.247   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1363 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 2.399e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 1.2755 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response transport_r :
+
+Call:
+lm(formula = transport_r ~ zr - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.129326 -0.043287  0.004398  0.045724  0.132227 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+zrtransport_r  0.98246    0.01858  52.879   <2e-16 ***
+zrtransport    0.01808    0.01511   1.197    0.237    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.06135 on 50 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:      1 
+F-statistic: 7.154e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response transport :
+
+Call:
+lm(formula = transport ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.20812 -0.04449 -0.00559  0.04919  0.18636 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+zrtransport_r  0.03408    0.02741   1.243     0.22    
+zrtransport    0.97423    0.02229  43.706   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.09052 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 4.943e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 0.6798 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response hotels_r :
+
+Call:
+lm(formula = hotels_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.40275 -0.03514  0.00761  0.04250  0.29970 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+zrhotels_r 1.001657   0.019654  50.965   <2e-16 ***
+zrhotels   0.002425   0.016339   0.148    0.883    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.09683 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 2.479e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response hotels :
+
+Call:
+lm(formula = hotels ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.25380 -0.09677 -0.03346  0.16304  0.24031 
+
+Coefficients:
+           Estimate Std. Error t value Pr(>|t|)    
+zrhotels_r  0.01278    0.02794   0.457    0.649    
+zrhotels    0.99004    0.02323  42.619   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1377 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 1.761e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 0.9656 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response financial_r :
+
+Call:
+lm(formula = financial_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.41317 -0.09363 -0.00356  0.07810  0.79371 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+zrfinancial_r  0.85675    0.03805  22.515  < 2e-16 ***
+zrfinancial    0.14757    0.03737   3.949 0.000246 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1834 on 50 degrees of freedom
+Multiple R-squared:  0.9997,	Adjusted R-squared:  0.9997 
+F-statistic: 9.223e+04 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response financial :
+
+Call:
+lm(formula = financial ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.45552 -0.15554  0.04609  0.13177  0.36213 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+zrfinancial_r  0.03659    0.04411    0.83    0.411    
+zrfinancial    0.96567    0.04332   22.29   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2126 on 50 degrees of freedom
+Multiple R-squared:  0.9996,	Adjusted R-squared:  0.9996 
+F-statistic: 7.043e+04 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 5.903 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response estates_r :
+
+Call:
+lm(formula = estates_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.57923 -0.04125 -0.00811  0.05229  0.23382 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+zrestates_r  0.98614    0.04039  24.417   <2e-16 ***
+zrestates    0.01079    0.02577   0.419    0.677    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1159 on 50 degrees of freedom
+Multiple R-squared:  0.9998,	Adjusted R-squared:  0.9998 
+F-statistic: 1.291e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response estates :
+
+Call:
+lm(formula = estates ~ zr - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.276289 -0.058538 -0.006648  0.065700  0.204964 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+zrestates_r  0.04160    0.03795   1.096    0.278    
+zrestates    0.97499    0.02421  40.273   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1089 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 3.583e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 3.7176 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response education_r :
+
+Call:
+lm(formula = education_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.18901 -0.03784  0.02030  0.04741  0.11857 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+zreducation_r 0.996274   0.018815  52.950   <2e-16 ***
+zreducation   0.006355   0.014154   0.449    0.655    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07215 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 3.499e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response education :
+
+Call:
+lm(formula = education ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.06554 -0.02314 -0.01620  0.00460  0.13034 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+zreducation_r 0.007623   0.011596   0.657    0.514    
+zreducation   0.995470   0.008723 114.117   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.04447 on 50 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:      1 
+F-statistic: 1.617e+06 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 0.4705 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response health_r :
+
+Call:
+lm(formula = health_r ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.30973 -0.03558  0.01682  0.05642  0.16369 
+
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)    
+zrhealth_r      0.991700   0.031277  31.707   <2e-16 ***
+zrother_service 0.008815   0.022827   0.386    0.701    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.09715 on 50 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 1.848e+05 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+Response other_service :
+
+Call:
+lm(formula = other_service ~ zr - 1)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0221042 -0.0027292 -0.0003368  0.0019126  0.0268450 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+zrhealth_r      -0.005631   0.002274  -2.476   0.0167 *  
+zrother_service  1.005399   0.001660 605.687   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.007065 on 50 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:      1 
+F-statistic: 6.529e+07 on 2 and 50 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 1.4897 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.138338 -0.038393  0.000426  0.037335  0.143561 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 5.636373   1.321373   4.266 0.000107 ***
+y.l1        0.211392   0.186941   1.131 0.264409    
+trend       0.020777   0.005778   3.596 0.000828 ***
+y.dl1       0.056122   0.178357   0.315 0.754542    
+y.dl2       0.177819   0.127570   1.394 0.170512    
+du          0.105833   0.041145   2.572 0.013644 *  
+dt          0.015473   0.004684   3.303 0.001932 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.06833 on 43 degrees of freedom
+  (3 observations deleted due to missingness)
+Multiple R-squared:  0.9899,	Adjusted R-squared:  0.9884 
+F-statistic: 698.9 on 6 and 43 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -4.2185 
+Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
+
+Potential break point at position: 24 
+
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.04024 -0.01560  0.00062  0.01584  0.04163 
+
+Coefficients:
+              Estimate Std. Error  t value Pr(>|t|)    
+(Intercept) 53.5688285  0.3356393  159.602  < 2e-16 ***
+y.l1        -3.0302602  0.0251919 -120.287  < 2e-16 ***
+trend        0.0385503  0.0005549   69.474  < 2e-16 ***
+y.dl1        2.0287419  0.0158628  127.893  < 2e-16 ***
+y.dl2        1.0171024  0.0115499   88.061  < 2e-16 ***
+du           0.0346748  0.0128209    2.705  0.00976 ** 
+dt          -0.0074743  0.0009101   -8.213 2.37e-10 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.02218 on 43 degrees of freedom
+  (3 observations deleted due to missingness)
+Multiple R-squared:  0.998,	Adjusted R-squared:  0.9978 
+F-statistic:  3642 on 6 and 43 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -159.9822 
+Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
+
+Potential break point at position: 31 
+
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.120463 -0.042004 -0.007608  0.043310  0.166904 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  6.110855   1.711150   3.571 0.000890 ***
+y.l1         0.307548   0.196341   1.566 0.124585    
+trend        0.038536   0.010806   3.566 0.000904 ***
+y.dl1        0.102372   0.161688   0.633 0.529989    
+y.dl2       -0.137680   0.140729  -0.978 0.333379    
+du          -0.083079   0.042350  -1.962 0.056286 .  
+dt           0.004142   0.003349   1.237 0.222846    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.06341 on 43 degrees of freedom
+  (3 observations deleted due to missingness)
+Multiple R-squared:  0.9944,	Adjusted R-squared:  0.9936 
+F-statistic:  1269 on 6 and 43 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -3.5268 
+Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
+
+Potential break point at position: 35 
+
+
+################################ 
+# Zivot-Andrews Unit Root Test # 
+################################ 
+
+
+Call:
+lm(formula = testmat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.27235 -0.05173  0.01132  0.05328  0.15049 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 17.169807   2.795702   6.142 2.28e-07 ***
+y.l1        -0.637244   0.267629  -2.381 0.021762 *  
+trend        0.058734   0.009906   5.929 4.64e-07 ***
+y.dl1        0.684799   0.178412   3.838 0.000401 ***
+y.dl2        0.112555   0.146577   0.768 0.446751    
+du          -0.269403   0.059335  -4.540 4.49e-05 ***
+dt          -0.038548   0.007650  -5.039 8.90e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08683 on 43 degrees of freedom
+  (3 observations deleted due to missingness)
+Multiple R-squared:  0.9359,	Adjusted R-squared:  0.927 
+F-statistic: 104.7 on 6 and 43 DF,  p-value: < 2.2e-16
+
+
+Teststatistic: -6.1176 
+Critical values: 0.01= -5.57 0.05= -5.08 0.1= -4.82 
+
+Potential break point at position: 30 
+

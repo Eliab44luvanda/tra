@@ -1,0 +1,207 @@
+$selection
+AIC(n)  HQ(n)  SC(n) FPE(n) 
+     2      2      2      2 
+
+$criteria
+                   1             2            3
+AIC(n) -8.8161288290 -9.1993134486 -9.145775806
+HQ(n)  -8.6948098497 -9.0173349797 -8.903137847
+SC(n)  -8.4851441398 -8.7028364148 -8.483806427
+FPE(n)  0.0001484933  0.0001015075  0.000107679
+
+
+VAR Estimation Results:
+========================= 
+Endogenous variables: lngdp, lm2 
+Deterministic variables: both 
+Sample size: 44 
+Log Likelihood: 76.747 
+Roots of the characteristic polynomial:
+0.8798 0.8798
+Call:
+VAR(y = y, p = 1, type = "both", ic = "SC")
+
+
+Estimation results for equation lngdp: 
+====================================== 
+lngdp = lngdp.l1 + lm2.l1 + const + trend 
+
+          Estimate Std. Error t value Pr(>|t|)    
+lngdp.l1  0.843469   0.062018  13.600   <2e-16 ***
+lm2.l1    0.178443   0.101926   1.751   0.0877 .  
+const     0.206835   0.486832   0.425   0.6732    
+trend    -0.001551   0.015740  -0.099   0.9220    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+Residual standard error: 0.1173 on 40 degrees of freedom
+Multiple R-Squared: 0.9985,	Adjusted R-squared: 0.9983 
+F-statistic:  8633 on 3 and 40 DF,  p-value: < 2.2e-16 
+
+
+Estimation results for equation lm2: 
+==================================== 
+lm2 = lngdp.l1 + lm2.l1 + const + trend 
+
+         Estimate Std. Error t value Pr(>|t|)    
+lngdp.l1 -0.01168    0.05299  -0.220   0.8267    
+lm2.l1    0.91520    0.08709  10.508 4.53e-13 ***
+const     0.82700    0.41598   1.988   0.0537 .  
+trend     0.02066    0.01345   1.536   0.1324    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+Residual standard error: 0.1003 on 40 degrees of freedom
+Multiple R-Squared: 0.9987,	Adjusted R-squared: 0.9986 
+F-statistic: 1.035e+04 on 3 and 40 DF,  p-value: < 2.2e-16 
+
+
+
+Covariance matrix of residuals:
+         lngdp      lm2
+lngdp 0.013767 0.003416
+lm2   0.003416 0.010051
+
+Correlation matrix of residuals:
+       lngdp    lm2
+lngdp 1.0000 0.2904
+lm2   0.2904 1.0000
+
+
+$Granger
+
+	Granger causality H0: lngdp do not Granger-cause lm2
+
+data:  VAR object varmodel
+F-Test = 0.046271, df1 = 1, df2 = 80, p-value = 0.8302
+
+
+$Instant
+
+	H0: No instantaneous causality between: lngdp and lm2
+
+data:  VAR object varmodel
+Chi-squared = 3.4225, df = 1, p-value = 0.06432
+
+
+$Granger
+
+	Granger causality H0: lm2 do not Granger-cause lngdp
+
+data:  VAR object varmodel
+F-Test = 12.643, df1 = 1, df2 = 80, p-value = 0.0006367
+
+
+$Instant
+
+	H0: No instantaneous causality between: lm2 and lngdp
+
+data:  VAR object varmodel
+Chi-squared = 3.4225, df = 1, p-value = 0.06432
+
+
+$lngdp
+          lngdp        lm2
+ [1,] 1.0000000 0.00000000
+ [2,] 0.9882351 0.01176493
+ [3,] 0.9650789 0.03492113
+ [4,] 0.9348798 0.06512015
+ [5,] 0.9012755 0.09872454
+ [6,] 0.8669653 0.13303474
+ [7,] 0.8337584 0.16624162
+ [8,] 0.8027447 0.19725535
+ [9,] 0.7744893 0.22551068
+[10,] 0.7492029 0.25079711
+[11,] 0.7268713 0.27312874
+[12,] 0.7073479 0.29265213
+[13,] 0.6904155 0.30958454
+[14,] 0.6758257 0.32417429
+[15,] 0.6633237 0.33667628
+[16,] 0.6526623 0.34733768
+[17,] 0.6436100 0.35639001
+[18,] 0.6359547 0.36404527
+[19,] 0.6295054 0.37049456
+[20,] 0.6240918 0.37590816
+
+$lm2
+           lngdp       lm2
+ [1,] 0.08434366 0.9156563
+ [2,] 0.08080258 0.9191974
+ [3,] 0.07773607 0.9222639
+ [4,] 0.07508731 0.9249127
+ [5,] 0.07280605 0.9271939
+ [6,] 0.07084771 0.9291523
+ [7,] 0.06917250 0.9308275
+ [8,] 0.06774492 0.9322551
+ [9,] 0.06653318 0.9334668
+[10,] 0.06550891 0.9344911
+[11,] 0.06464676 0.9353532
+[12,] 0.06392422 0.9360758
+[13,] 0.06332131 0.9366787
+[14,] 0.06282041 0.9371796
+[15,] 0.06240609 0.9375939
+[16,] 0.06206485 0.9379352
+[17,] 0.06178499 0.9382150
+[18,] 0.06155643 0.9384436
+[19,] 0.06137054 0.9386295
+[20,] 0.06121995 0.9387801
+
+
+######################################## 
+# Phillips and Ouliaris Unit Root Test # 
+######################################## 
+
+Test of type Pz 
+detrending of series none 
+
+Response lttaxrevenue :
+
+Call:
+lm(formula = lttaxrevenue ~ zr - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.252480 -0.087324  0.001151  0.082457  0.151840 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+zrlttaxrevenue  0.80147    0.04376  18.315  < 2e-16 ***
+zrlngdp         0.18236    0.03687   4.946 1.27e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1036 on 42 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 2.601e+05 on 2 and 42 DF,  p-value: < 2.2e-16
+
+
+Response lngdp :
+
+Call:
+lm(formula = lngdp ~ zr - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.17359 -0.07927 -0.00562  0.05033  0.62469 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+zrlttaxrevenue -0.05615    0.05345  -1.051    0.299    
+zrlngdp         1.06163    0.04503  23.577   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1265 on 42 degrees of freedom
+Multiple R-squared:  0.9999,	Adjusted R-squared:  0.9999 
+F-statistic: 2.439e+05 on 2 and 42 DF,  p-value: < 2.2e-16
+
+
+
+Value of test-statistic is: 7.2762 
+
+Critical values of Pz are:
+                  10pct    5pct    1pct
+critical values 33.9267 40.8217 55.1911
+

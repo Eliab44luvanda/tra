@@ -1,0 +1,1238 @@
+
+> # reading in data
+> rev_quart_r <- read.csv("rev_quart_r.csv")
+
+> gdp_quart <- read.csv("gdp_quart.csv")
+
+> # merging the two data frames
+> # rev_gdp <- merge(rev_quart_r, gdp_quart)
+> 
+> # creating time series objects
+> agri_r <- ts(log(rev_quart_r$agri_r .... [TRUNCATED] 
+
+> agri <- ts(log(gdp_quart$agri), frequency = 4, start = c(2001,1))
+
+> mining_r <- ts(log(rev_quart_r$mining_r), frequency = 4, start = c(2001,1))
+
+> mining <- ts(log(gdp_quart$mining), frequency = 4, start = c(2001,1))
+
+> manufacturing_r <- ts(log(rev_quart_r$manufacturing_r), frequency = 4, 
++                       start = c(2001,1))
+
+> manufacturing <- ts(log(gdp_quart$manufacturing), frequency = 4, start = c(2001,1))
+
+> electricity_r <- ts(log(rev_quart_r$electricity_r), frequency = 4, 
++                       start = c(2001,1))
+
+> electricity <- ts(log(gdp_quart$electricity), frequency = 4, start = c(2001,1))
+
+> construction_r <- ts(log(rev_quart_r$construction_r), frequency = 4, 
++                     start = c(2001,1))
+
+> construction <- ts(log(gdp_quart$construction), frequency = 4, start = c(2001,1))
+
+> trade_r <- ts(log(rev_quart_r$trade_r), frequency = 4, 
++                      start = c(2001,1))
+
+> trade <- ts(log(gdp_quart$trade), frequency = 4, start = c(2001,1))
+
+> transport_r <- ts(log(rev_quart_r$transport_r), frequency = 4, 
++               start = c(2001,1))
+
+> transport <- ts(log(gdp_quart$transport), frequency = 4, start = c(2001,1))
+
+> hotels_r <- ts(log(rev_quart_r$hotels_r), frequency = 4, 
++                   start = c(2001,1))
+
+> hotels <- ts(log(gdp_quart$hotels), frequency = 4, start = c(2001,1))
+
+> financial_r <- ts(log(rev_quart_r$financial_r), frequency = 4, 
++                start = c(2001,1))
+
+> financial <- ts(log(gdp_quart$financial), frequency = 4, start = c(2001,1))
+
+> estates_r <- ts(log(rev_quart_r$estates_r), frequency = 4, 
++                   start = c(2001,1))
+
+> estates <- ts(log(gdp_quart$estates), frequency = 4, start = c(2001,1))
+
+> education_r <- ts(log(rev_quart_r$education_r), frequency = 4, 
++                 start = c(2001,1))
+
+> education <- ts(log(gdp_quart$education), frequency = 4, start = c(2001,1))
+
+> health_r <- ts(log(rev_quart_r$health_r), frequency = 4, 
++                   start = c(2001,1))
+
+> other_service <- ts(log(gdp_quart$other_service), frequency = 4, 
++                     start = c(2001,1))
+
+> # decomposing time serie using hpfilter
+> require(mFilter)
+
+> # agriculture
+> agri_rf <- hpfilter(agri_r, freq = 4, type = "frequency")
+
+> agrif <- hpfilter(agri, freq = 4, type = "frequency")
+
+> # mining
+> mining_rf <- hpfilter(agri_r, freq = 4, type = "frequency")
+
+> miningf <- hpfilter(mining, freq = 4, type = "frequency")
+
+> # manufacturing
+> manufacturing_rf <- hpfilter(manufacturing_r, freq = 4, type = "frequency")
+
+> manufacturingf <- hpfilter(manufacturing, freq = 4, type = "frequency")
+
+> # electricity
+> electricity_rf <- hpfilter(electricity_r, freq = 4, type = "frequency")
+
+> electricityf <- hpfilter(electricity, freq = 4, type = "frequency")
+
+> # construction
+> construction_rf <- hpfilter(construction_r, freq = 4, type = "frequency")
+
+> constructionf <- hpfilter(construction, freq = 4, type = "frequency")
+
+> # trade
+> trade_rf <- hpfilter(trade_r, freq = 4, type = "frequency")
+
+> tradef <- hpfilter(trade, freq = 4, type = "frequency")
+
+> # transport
+> transport_rf <- hpfilter(transport_r, freq = 4, type = "frequency")
+
+> transportf <- hpfilter(transport, freq = 4, type = "frequency")
+
+> # hotels
+> hotels_rf <- hpfilter(hotels_r, freq = 4, type = "frequency")
+
+> hotelsf <- hpfilter(hotels, freq = 4, type = "frequency")
+
+> # financial
+> financial_rf <- hpfilter(financial_r, freq = 4, type = "frequency")
+
+> financialf <- hpfilter(financial, freq = 4, type = "frequency")
+
+> # estates
+> estates_rf <- hpfilter(estates_r, freq = 4, type = "frequency")
+
+> estatesf <- hpfilter(estates, freq = 4, type = "frequency")
+
+> # education
+> education_rf <- hpfilter(education_r, freq = 4, type = "frequency")
+
+> educationf <- hpfilter(education, freq = 4, type = "frequency")
+
+> # health
+> health_rf <- hpfilter(health_r, freq = 4, type = "frequency")
+
+> other_servicef <- hpfilter(other_service, freq = 4, type = "frequency")
+
+> # plotting cyclic components 
+> par(bty = "l", font = 1)
+
+> par((mfrow = c(1,2)))
+NULL
+
+> plot(agri_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", lwd = 2)
+
+> plot(agrif$cycle, ylab = "", col = "red", main = "GDP - Agriculture", lwd = 2)
+
+> plot(mining_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", lwd = 2)
+
+> plot(miningf$cycle, ylab = "", col = "red", main = "GDP - Mining", lwd = 2)
+
+> plot(manufacturing_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(manufacturingf$cycle, ylab = "", col = "red", main = "GDP - Manufacturing", 
++      lwd = 2)
+
+> plot(electricity_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(electricityf$cycle, ylab = "", col = "red", main = "GDP - Electricity", 
++      lwd = 2)
+
+> plot(construction_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(constructionf$cycle, ylab = "", col = "red", main = "GDP - Construction", 
++      lwd = 2)
+
+> plot(trade_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(tradef$cycle, ylab = "", col = "red", main = "GDP - Trade", 
++      lwd = 2)
+
+> plot(transport_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(transportf$cycle, ylab = "", col = "red", main = "GDP - Transport", 
++      lwd = 2)
+
+> plot(hotels_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(hotelsf$cycle, ylab = "", col = "red", main = "GDP - Hotels", 
++      lwd = 2)
+
+> plot(financial_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(financialf$cycle, ylab = "", col = "red", main = "GDP - Financial", 
++      lwd = 2)
+
+> plot(estates_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(estatesf$cycle, ylab = "", col = "red", main = "GDP - Estates", 
++      lwd = 2)
+
+> plot(education_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(educationf$cycle, ylab = "", col = "red", main = "GDP - Education", 
++      lwd = 2)
+
+> plot(health_rf$cycle, ylab = "", col = "blue", main = "Tax Revenue", 
++      lwd = 2)
+
+> plot(other_servicef$cycle, ylab = "", col = "red", main = "GDP - Health", 
++      lwd = 2)
+
+> tim <- 1:length(agri)
+
+> # computation of gdp growth by sector
+> lsagr <- lm(agri ~ tim)
+
+> lsmin <- lm(mining ~ tim)
+
+> lsman <- lm(manufacturing ~ tim)
+
+> lselec <- lm(electricity ~ tim)
+
+> lselec <- lm(electricity ~ tim)
+
+> lscons <- lm(construction ~ tim)
+
+> lstrad <- lm(trade ~ tim)
+
+> lstrans <- lm(transport ~ tim)
+
+> lshot <- lm(hotels ~ tim)
+
+> lsfin <- lm(financial ~ tim)
+
+> lsest <- lm(estates ~ tim)
+
+> lsedu <- lm(education ~ tim)
+
+> # lshealth_r <- lm(health_r ~ tim)
+> summary(lsagr)
+
+Call:
+lm(formula = agri ~ tim)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.6056 -0.3251 -0.1739  0.3152  0.6886 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 13.335317   0.124842 106.817   <2e-16 ***
+tim          0.008019   0.004023   1.993   0.0516 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.448 on 51 degrees of freedom
+Multiple R-squared:  0.07227,	Adjusted R-squared:  0.05408 
+F-statistic: 3.973 on 1 and 51 DF,  p-value: 0.0516
+
+
+> summary(lsmin)
+
+Call:
+lm(formula = mining ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.35396 -0.09043  0.00653  0.12182  0.29881 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 10.725181   0.040365  265.70   <2e-16 ***
+tim          0.020715   0.001301   15.93   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1449 on 51 degrees of freedom
+Multiple R-squared:  0.8326,	Adjusted R-squared:  0.8293 
+F-statistic: 253.6 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsman)
+
+Call:
+lm(formula = manufacturing ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.170630 -0.056386  0.007165  0.059246  0.130805 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.211e+01  2.263e-02  534.80   <2e-16 ***
+tim         2.053e-02  7.294e-04   28.14   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08123 on 51 degrees of freedom
+Multiple R-squared:  0.9395,	Adjusted R-squared:  0.9383 
+F-statistic: 792.1 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lselec)
+
+Call:
+lm(formula = electricity ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.166822 -0.030470 -0.008123  0.024252  0.121898 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.097e+01  1.494e-02  734.16   <2e-16 ***
+tim         1.509e-02  4.813e-04   31.35   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.0536 on 51 degrees of freedom
+Multiple R-squared:  0.9507,	Adjusted R-squared:  0.9497 
+F-statistic: 982.8 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lscons)
+
+Call:
+lm(formula = construction ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.26551 -0.08098  0.00274  0.07327  0.37194 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 11.68352    0.03940  296.56   <2e-16 ***
+tim          0.02291    0.00127   18.05   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1414 on 51 degrees of freedom
+Multiple R-squared:  0.8646,	Adjusted R-squared:  0.8619 
+F-statistic: 325.7 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lstrad)
+
+Call:
+lm(formula = trade ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.17030 -0.06218 -0.01779  0.03786  0.18399 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.253e+01  2.445e-02   512.4   <2e-16 ***
+tim         2.048e-02  7.879e-04    26.0   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08774 on 51 degrees of freedom
+Multiple R-squared:  0.9298,	Adjusted R-squared:  0.9285 
+F-statistic: 675.8 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lstrans)
+
+Call:
+lm(formula = transport ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.13765 -0.05279 -0.01266  0.04390  0.16249 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.180e+01  2.038e-02   578.7   <2e-16 ***
+tim         2.483e-02  6.568e-04    37.8   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07315 on 51 degrees of freedom
+Multiple R-squared:  0.9655,	Adjusted R-squared:  0.9649 
+F-statistic:  1429 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lshot)
+
+Call:
+lm(formula = hotels ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.123872 -0.079885  0.006109  0.078133  0.146829 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.102e+01  2.357e-02   467.4   <2e-16 ***
+tim         1.139e-02  7.595e-04    15.0   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08458 on 51 degrees of freedom
+Multiple R-squared:  0.8152,	Adjusted R-squared:  0.8116 
+F-statistic:   225 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsfin)
+
+Call:
+lm(formula = financial ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.34256 -0.04184  0.02750  0.08985  0.21957 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 10.388532   0.040567  256.08   <2e-16 ***
+tim          0.024562   0.001307   18.79   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1456 on 51 degrees of freedom
+Multiple R-squared:  0.8738,	Adjusted R-squared:  0.8713 
+F-statistic:   353 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsest)
+
+Call:
+lm(formula = estates ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.12041 -0.04715 -0.01371  0.03655  0.17566 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.232e+01  1.922e-02  640.98   <2e-16 ***
+tim         1.703e-02  6.193e-04   27.51   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.06897 on 51 degrees of freedom
+Multiple R-squared:  0.9368,	Adjusted R-squared:  0.9356 
+F-statistic: 756.6 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsedu)
+
+Call:
+lm(formula = education ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.098136 -0.025176  0.008878  0.023192  0.086220 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.070e+01  1.017e-02 1052.32   <2e-16 ***
+tim         1.400e-02  3.277e-04   42.71   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.0365 on 51 degrees of freedom
+Multiple R-squared:  0.9728,	Adjusted R-squared:  0.9723 
+F-statistic:  1824 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> # computation of revenue growth by sector
+> lsagr_r <- lm(agri_r ~ tim)
+
+> lsmin_r <- lm(mining_r ~ tim)
+
+> lsman_r <- lm(manufacturing_r ~ tim)
+
+> lselec_r <- lm(electricity_r ~ tim)
+
+> lselec_r <- lm(electricity_r ~ tim)
+
+> lscons_r <- lm(construction_r ~ tim)
+
+> lstrad_r <- lm(trade_r ~ tim)
+
+> lstrans_r <- lm(transport_r ~ tim)
+
+> lshot_r <- lm(hotels_r ~ tim)
+
+> lsfin_r <- lm(financial_r ~ tim)
+
+> lsest_r <- lm(estates_r ~ tim)
+
+> lsedu_r <- lm(education_r ~ tim)
+
+> lshealth_r <- lm(health_r ~ tim)
+
+> summary(lsagr_r)
+
+Call:
+lm(formula = agri_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.27120 -0.05208 -0.00345  0.04171  0.43242 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 6.965595   0.031762  219.30   <2e-16 ***
+tim         0.041800   0.001024   40.84   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.114 on 51 degrees of freedom
+Multiple R-squared:  0.9703,	Adjusted R-squared:  0.9697 
+F-statistic:  1668 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsmin_r)
+
+Call:
+lm(formula = mining_r ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.133985 -0.048341  0.007866  0.049557  0.170776 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 8.8297250  0.0201809  437.53   <2e-16 ***
+tim         0.0538561  0.0006503   82.81   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07242 on 51 degrees of freedom
+Multiple R-squared:  0.9926,	Adjusted R-squared:  0.9925 
+F-statistic:  6858 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsman_r)
+
+Call:
+lm(formula = manufacturing_r ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.298601 -0.067736 -0.007698  0.064210  0.247642 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 9.9104248  0.0277096  357.65   <2e-16 ***
+tim         0.0504583  0.0008929   56.51   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.09944 on 51 degrees of freedom
+Multiple R-squared:  0.9843,	Adjusted R-squared:  0.984 
+F-statistic:  3193 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lselec_r)
+
+Call:
+lm(formula = electricity_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.52241 -0.11041  0.04558  0.20519  0.43782 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 7.765459   0.111925   69.38   <2e-16 ***
+tim         0.058965   0.003607   16.35   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4017 on 51 degrees of freedom
+Multiple R-squared:  0.8398,	Adjusted R-squared:  0.8366 
+F-statistic: 267.3 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lscons_r)
+
+Call:
+lm(formula = construction_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.22173 -0.06807  0.02184  0.05857  0.45040 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 8.130783   0.031529   257.9   <2e-16 ***
+tim         0.040843   0.001016    40.2   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1131 on 51 degrees of freedom
+Multiple R-squared:  0.9694,	Adjusted R-squared:  0.9688 
+F-statistic:  1616 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lstrad_r)
+
+Call:
+lm(formula = trade_r ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.160195 -0.050519 -0.005679  0.035618  0.284170 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 9.3667879  0.0228934  409.15   <2e-16 ***
+tim         0.0442479  0.0007377   59.98   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08216 on 51 degrees of freedom
+Multiple R-squared:  0.986,	Adjusted R-squared:  0.9857 
+F-statistic:  3597 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lstrans_r)
+
+Call:
+lm(formula = transport_r ~ tim)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.117968 -0.040312 -0.007581  0.024917  0.192845 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 8.7852882  0.0182733  480.77   <2e-16 ***
+tim         0.0495908  0.0005889   84.22   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.06558 on 51 degrees of freedom
+Multiple R-squared:  0.9929,	Adjusted R-squared:  0.9927 
+F-statistic:  7092 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lshot_r)
+
+Call:
+lm(formula = hotels_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.26597 -0.07047  0.00165  0.07540  0.48631 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  7.94901    0.03817  208.24   <2e-16 ***
+tim          0.05377    0.00123   43.71   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.137 on 51 degrees of freedom
+Multiple R-squared:  0.974,	Adjusted R-squared:  0.9735 
+F-statistic:  1911 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsfin_r)
+
+Call:
+lm(formula = financial_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.13920 -0.09544 -0.00665  0.10806  0.35634 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 9.077683   0.060102  151.04   <2e-16 ***
+tim         0.064962   0.001937   33.54   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2157 on 51 degrees of freedom
+Multiple R-squared:  0.9566,	Adjusted R-squared:  0.9558 
+F-statistic:  1125 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsest_r)
+
+Call:
+lm(formula = estates_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.33676 -0.07558  0.00406  0.06751  0.59313 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 7.202180   0.043001  167.49   <2e-16 ***
+tim         0.034966   0.001386   25.23   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1543 on 51 degrees of freedom
+Multiple R-squared:  0.9258,	Adjusted R-squared:  0.9244 
+F-statistic: 636.7 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lsedu_r)
+
+Call:
+lm(formula = education_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.18236 -0.04652  0.01306  0.04602  0.22664 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 7.0996531  0.0228215  311.10   <2e-16 ***
+tim         0.0453425  0.0007354   61.66   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.0819 on 51 degrees of freedom
+Multiple R-squared:  0.9868,	Adjusted R-squared:  0.9865 
+F-statistic:  3801 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(lshealth_r)
+
+Call:
+lm(formula = health_r ~ tim)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.34922 -0.08532  0.01361  0.10090  0.35092 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 7.143039   0.041468  172.25   <2e-16 ***
+tim         0.037585   0.001336   28.13   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1488 on 51 degrees of freedom
+Multiple R-squared:  0.9394,	Adjusted R-squared:  0.9382 
+F-statistic: 791.1 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> # estimation of elasticities
+> agrils <- lm(agri_r ~ agri)
+
+> minls <- lm(mining_r ~ mining)
+
+> manls <- lm(manufacturing_r ~ manufacturing)
+
+> elels <- lm(electricity_r ~ electricity)
+
+> conls <- lm(construction_r ~ construction)
+
+> tradls <- lm(trade_r ~ trade)
+
+> transls <- lm(transport_r ~ transport)
+
+> hotls <- lm(hotels_r ~ hotels)
+
+> finls <- lm(financial_r ~ financial)
+
+> estls <- lm(estates_r ~ estates)
+
+> eduls <- lm(education_r ~ education)
+
+> heals <- lm(health_r ~ other_service)
+
+> summary(agrils)
+
+Call:
+lm(formula = agri_r ~ agri)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.08590 -0.53555 -0.05446  0.44324  1.42087 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept)   3.0561     2.6073   1.172   0.2466  
+agri          0.3718     0.1923   1.933   0.0588 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6387 on 51 degrees of freedom
+Multiple R-squared:  0.06829,	Adjusted R-squared:  0.05002 
+F-statistic: 3.738 on 1 and 51 DF,  p-value: 0.05875
+
+
+> summary(minls)
+
+Call:
+lm(formula = mining_r ~ mining)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.58626 -0.25912 -0.09272  0.30880  0.68822 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -14.1899     1.5536  -9.134 2.58e-12 ***
+mining        2.1688     0.1376  15.761  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3479 on 51 degrees of freedom
+Multiple R-squared:  0.8297,	Adjusted R-squared:  0.8263 
+F-statistic: 248.4 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(manls)
+
+Call:
+lm(formula = manufacturing_r ~ manufacturing)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.3906 -0.1991 -0.0108  0.2056  0.4823 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -17.7341     1.2741  -13.92   <2e-16 ***
+manufacturing   2.2913     0.1006   22.77   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2373 on 51 degrees of freedom
+Multiple R-squared:  0.9105,	Adjusted R-squared:  0.9087 
+F-statistic: 518.6 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(elels)
+
+Call:
+lm(formula = electricity_r ~ electricity)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-3.08583 -0.15449  0.05094  0.26443  0.56145 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -31.4057     3.3571  -9.355 1.19e-12 ***
+electricity   3.5844     0.2951  12.145  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5086 on 51 degrees of freedom
+Multiple R-squared:  0.7431,	Adjusted R-squared:  0.738 
+F-statistic: 147.5 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(conls)
+
+Call:
+lm(formula = construction_r ~ construction)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.43905 -0.18721 -0.03992  0.14385  0.55515 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -9.5476     1.2234  -7.804 2.94e-10 ***
+construction   1.5267     0.0994  15.359  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2727 on 51 degrees of freedom
+Multiple R-squared:  0.8222,	Adjusted R-squared:  0.8187 
+F-statistic: 235.9 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(tradls)
+
+Call:
+lm(formula = trade_r ~ trade)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.44410 -0.07226  0.02787  0.12963  0.31787 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -15.80361    1.06542  -14.83   <2e-16 ***
+trade         2.01564    0.08143   24.75   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1926 on 51 degrees of freedom
+Multiple R-squared:  0.9232,	Adjusted R-squared:  0.9217 
+F-statistic: 612.8 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(transls)
+
+Call:
+lm(formula = transport_r ~ transport)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.37104 -0.11605  0.02906  0.08563  0.40979 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -13.82208    0.75857  -18.22   <2e-16 ***
+transport     1.92089    0.06082   31.58   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1712 on 51 degrees of freedom
+Multiple R-squared:  0.9514,	Adjusted R-squared:  0.9504 
+F-statistic: 997.5 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(hotls)
+
+Call:
+lm(formula = hotels_r ~ hotels)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.67977 -0.30740 -0.00813  0.32353  0.72583 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -34.0821     3.1335  -10.88  6.8e-15 ***
+hotels        3.8401     0.2767   13.88  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3887 on 51 degrees of freedom
+Multiple R-squared:  0.7907,	Adjusted R-squared:  0.7866 
+F-statistic: 192.6 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(finls)
+
+Call:
+lm(formula = financial_r ~ financial)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.52518 -0.25272 -0.05802  0.26369  0.92707 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -14.7039     1.5872  -9.264 1.64e-12 ***
+financial     2.3106     0.1435  16.099  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.42 on 51 degrees of freedom
+Multiple R-squared:  0.8356,	Adjusted R-squared:  0.8323 
+F-statistic: 259.2 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(estls)
+
+Call:
+lm(formula = estates_r ~ estates)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.46574 -0.14214 -0.00512  0.14495  0.43303 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -16.3128     1.3860  -11.77 3.74e-16 ***
+estates       1.9142     0.1084   17.65  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2125 on 51 degrees of freedom
+Multiple R-squared:  0.8593,	Adjusted R-squared:  0.8566 
+F-statistic: 311.6 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(eduls)
+
+Call:
+lm(formula = education_r ~ education)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.27613 -0.07445 -0.00244  0.06645  0.26728 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -26.79548    0.84708  -31.63   <2e-16 ***
+education     3.16954    0.07643   41.47   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1208 on 51 degrees of freedom
+Multiple R-squared:  0.9712,	Adjusted R-squared:  0.9706 
+F-statistic:  1720 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> summary(heals)
+
+Call:
+lm(formula = health_r ~ other_service)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.35029 -0.09609  0.01035  0.10089  0.42068 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -20.37490    1.11036  -18.35   <2e-16 ***
+other_service   2.55085    0.09925   25.70   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1619 on 51 degrees of freedom
+Multiple R-squared:  0.9283,	Adjusted R-squared:  0.9269 
+F-statistic: 660.6 on 1 and 51 DF,  p-value: < 2.2e-16
+
+
+> # Computation volatility measure of cyclic components
+> sd(agri_rf$cycle)
+[1] 0.02899319
+
+> sd(agrif$cycle)
+[1] 0.2410242
+
+> sd(mining_rf$cycle)
+[1] 0.02899319
+
+> sd(miningf$cycle)
+[1] 0.04789495
+
+> sd(manufacturing_rf$cycle)
+[1] 0.03148186
+
+> sd(manufacturingf$cycle)
+[1] 0.03940821
+
+> sd(electricity_rf$cycle)
+[1] 0.1019907
+
+> sd(electricityf$cycle)
+[1] 0.02567992
+
+> sd(construction_rf$cycle)
+[1] 0.02390594
+
+> sd(constructionf$cycle)
+[1] 0.07699151
+
+> sd(trade_rf$cycle)
+[1] 0.02439518
+
+> sd(tradef$cycle)
+[1] 0.05013863
+
+> sd(transport_rf$cycle)
+[1] 0.02083688
+
+> sd(transportf$cycle)
+[1] 0.03258784
+
+> sd(hotels_rf$cycle)
+[1] 0.02709082
+
+> sd(hotelsf$cycle)
+[1] 0.05007026
+
+> sd(financial_rf$cycle)
+[1] 0.05671842
+
+> sd(financialf$cycle)
+[1] 0.07516877
+
+> sd(financial_rf$cycle)
+[1] 0.05671842
+
+> sd(financialf$cycle)
+[1] 0.07516877
+
+> sd(estates_rf$cycle)
+[1] 0.03141562
+
+> sd(estatesf$cycle)
+[1] 0.03935039
+
+> sd(health_rf$cycle)
+[1] 0.03159366
+
+> sd(other_servicef$cycle)
+[1] 0.001949152
+
+> # Computation of correlation coefficient between cyclic components
+> cor.test(agri_rf$cycle, agrif$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  agri_rf$cycle and agrif$cycle
+z = -1.2887, p-value = 0.1975
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+-0.1219158 
+
+
+> cor.test(mining_rf$cycle, miningf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  mining_rf$cycle and miningf$cycle
+z = 0.56763, p-value = 0.5703
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+0.05370102 
+
+
+> cor.test(manufacturing_rf$cycle, manufacturingf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  manufacturing_rf$cycle and manufacturingf$cycle
+z = -4.7405, p-value = 2.132e-06
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+-0.4484761 
+
+
+> cor.test(electricity_rf$cycle, electricityf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  electricity_rf$cycle and electricityf$cycle
+z = -1.7182, p-value = 0.08575
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+-0.1625544 
+
+
+> cor.test(construction_rf$cycle, constructionf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  construction_rf$cycle and constructionf$cycle
+z = -0.13807, p-value = 0.8902
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+        tau 
+-0.01306241 
+
+
+> cor.test(trade_rf$cycle, tradef$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  trade_rf$cycle and tradef$cycle
+z = 2.0097, p-value = 0.04446
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+      tau 
+0.1901306 
+
+
+> cor.test(transport_rf$cycle, transportf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  transport_rf$cycle and transportf$cycle
+z = 1.8563, p-value = 0.06341
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+      tau 
+0.1756168 
+
+
+> cor.test(hotels_rf$cycle, hotelsf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  hotels_rf$cycle and hotelsf$cycle
+z = -0.67502, p-value = 0.4997
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+        tau 
+-0.06386067 
+
+
+> cor.test(financial_rf$cycle, financialf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  financial_rf$cycle and financialf$cycle
+z = 0.4449, p-value = 0.6564
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+0.04208999 
+
+
+> cor.test(estates_rf$cycle, estatesf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  estates_rf$cycle and estatesf$cycle
+z = -0.95117, p-value = 0.3415
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+        tau 
+-0.08998549 
+
+
+> cor.test(education_rf$cycle, educationf$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  education_rf$cycle and educationf$cycle
+z = -3.0836, p-value = 0.002045
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+-0.2917271 
+
+
+> cor.test(health_rf$cycle, other_servicef$cycle, method = "kendall")
+
+	Kendall's rank correlation tau
+
+data:  health_rf$cycle and other_servicef$cycle
+z = -0.58297, p-value = 0.5599
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+        tau 
+-0.05515239 
+

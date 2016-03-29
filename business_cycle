@@ -1,0 +1,7 @@
+NULL
+
+> rm(list = ls())
+
+> setwd("~/tra_business_cycle")
+
+> sink(file = "rev_gdp",append = FALSE)
