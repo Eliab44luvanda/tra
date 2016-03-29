@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\n\nsetwd(\"~/tra_business_cycle\")\nrm(list = ls())\nshares <- read.csv(\"shares.csv\")\nattach(shares)\n\nagriculture <- ts(agriculture, start = 1998, end = 2013, frequency = 1)\nindustry <- ts(industry, start = 1998, end = 2013, frequency = 1)\nservices <- ts(services, start = 1998, end = 2013, frequency = 1)\n\npar(font = 2)\nplot.ts(agriculture, ylim = c(10,65), ylab = \"Share (%)\", col = \"black\", \n      xaxp = c(1998,2014,8), bty = \"l\", lwd = 2, xlab = \"Year\")\nlines(industry, col = \"blue\", lwd = 2)\nlines(services, col = \"red\", lwd = 2)\nlegend(\"topleft\", legend = c(\"Agriculture\",\"Industry\",\"Services\"),\n       lty = 1, lwd = 2, col = c(\"black\",\"blue\",\"red\"), bty = \"n\",\n       cex = 0.8, ncol = 1, \n       text.col = c(\"black\",\"blue\",\"red\"), inset = 0.01)\n\n",
+    "created" : 1456985190984.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2903772519",
+    "id" : "CF825BFB",
+    "lastKnownWriteTime" : 1457861324,
+    "last_content_update" : 1457861324997,
+    "path" : "~/tra_business_cycle/shares.R",
+    "project_path" : "shares.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

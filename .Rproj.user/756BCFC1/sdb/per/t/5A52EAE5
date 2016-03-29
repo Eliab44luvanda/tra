@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "\nrm(list = ls())\nsetwd(\"~/tra_business_cycle\")\nsink(file = \"rev_bysector\",append = FALSE)\n\n\nrev_bysector <- read.csv(\"~/tra_business_cycle/rev_bysector.csv\")\nattach(rev_bysector)\nagri <- ts(log(agri), frequency = 4, start = c(1998,1))\nIndustry <- ts(log(Industry), frequency = 4, start = c(1998,1))\nservices <- ts(log(services), frequency = 4, start = c(1998,1))\nhouseholds <- ts(log(households), frequency = 4, start = c(1998,1))\n\nplot.ts(agri, ylim = c(0,18), ylab = \"Logarithm\", col = \"black\", \n        xaxp = c(1998,2014,16), bty = \"l\", lwd = 2, xlab = \"Year\")\nlines(Industry, col = \"blue\", lwd = 2)\nlines(services, col = \"red\", lwd = 2)\nlines(households,col = \"purple\", lwd = 2)\nlegend(\"topleft\", legend = c(\"Agriculture\",\"Industry\",\"Services\",\"Households\"),\n       lty = 1, lwd = 2, col = c(\"black\",\"blue\",\"red\", \"purple\"), bty = \"n\",\n       cex = 0.8, ncol = 1, \n       text.col = c(\"black\",\"blue\",\"red\", \"purple\"), inset = 0.01)\n\ntim <- 1:68\nols_ag <- lm(agri~tim)\nols_ind <- lm(Industry~tim)\nols_serv <- lm(services~tim)\nols_hou <- lm(households~tim)\n\nsummary(ols_ag)\nsummary(ols_ind)\nsummary(ols_serv)\nsummary(ols_hou)\n\nlibrary(texreg)\ntexreg(\n  list(ols_ag,ols_ind,ols_serv),\n  dcolumn = TRUE,\n  booktabs = TRUE,\n  use.packages = FALSE,  single.row = FALSE,\n  custom.model.names = c(\"Agriculture\",\"Industry\",\"Services\"),\n  custom.coef.names =c(\"Intercept\",\"Time\"),\n  digits = 4,\n  caption.above = TRUE,\n  label = \"tab:reg\",\n  caption = \"Estimate of Growth Rates by OLS\",\n  float = \"bh\"\n)\n",
+    "created" : 1457546197641.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "404526370",
+    "id" : "5A52EAE5",
+    "lastKnownWriteTime" : 1457929894,
+    "last_content_update" : 1457929894237,
+    "path" : "~/tra_business_cycle/rev_bysector.R",
+    "project_path" : "rev_bysector.R",
+    "properties" : {
+        "source_window_id" : "",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

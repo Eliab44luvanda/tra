@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\nsetwd(\"~/tra_business_cycle\")\nrm(list = ls())\nrev_sec_shares <- read.csv(\"rev_sec_shares.csv\")\nattach(rev_sec_shares)\n\nagriculture <- ts(agriculture, frequency = 4,  start = c(1998,1))\nindustry <- ts(industry, frequency = 4,  start = c(1998,1))\nservices <- ts(services, frequency = 4,  start = c(1998,1))\nhouseholds <- ts(households, frequency = 4,  start = c(1998,1))\n\n\nplot.ts(agriculture, ylim = c(0,100), ylab = \"Share (%)\", col = \"black\", \n        xaxp = c(1998,2014,16), bty = \"l\", lwd = 2, xlab = \"Year\")\nlines(industry, col = \"blue\", lwd = 2)\nlines(services, col = \"red\", lwd = 2)\nlines(households, col = \"orange\", lwd = 2)\nlegend(\"topleft\", legend = c(\"Agriculture\",\"Industry\",\"Services\",\"Households\"),\n       lty = 1, lwd = 2, col = c(\"black\",\"blue\",\"red\",\"orange\"), bty = \"n\",\n       cex = 0.8, ncol = 1, \n       text.col = c(\"black\",\"blue\",\"red\",\"orange\"), inset = 0.01)\n",
+    "created" : 1457548526166.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2308523183",
+    "id" : "81EF9068",
+    "lastKnownWriteTime" : 1457549776,
+    "last_content_update" : 1457549776773,
+    "path" : "~/tra_business_cycle/rev_sec_shares.R",
+    "project_path" : "rev_sec_shares.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

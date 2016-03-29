@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "\nsetwd(\"~/tra_business_cycle\")\nrev_sectors_s <- read.csv(\"~/tra_business_cycle/rev_sectors_s.csv\")\nattach(rev_sectors_s)\n\nrev_sectors_s <- ts(data = rev_sectors_s, start = 1998, end = 2014, frequency = 4)\nlagri <- ts(lagri, start = 1998, end = 2014, frequency = 4)\n# transform variables into logs\nlagri <- log(agri)\nlmining <- log(mining)\nlelecgas <- log(elecgas)\nlwater <- log(water)\nlconstruction <- log(construction)\nltrade <- log(trade)\nltransport <- log(transport)\nlaccomodation <- log(accomodation)\nlict <- log(ict)\nlfinance <- log(finance)\nlreal_estates <- log(lreal_estates)\nlprofessional <- log(professional)\nladministration <- log(administration)\nlpublic_admin <- log(lpublic_admin)\nleducation <- log(education)\nlhealth <- log(health)\nlrecreation <- log(recreation)\nlother_service <- log(other_service)\nlhouseholds <- log(households)\nlextraterritorial <- log(extraterirritorial)\nltotal <- log(total)\n\n",
+    "created" : 1457929718958.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3603690179",
+    "id" : "1615B226",
+    "lastKnownWriteTime" : 1456839276,
+    "last_content_update" : 1456839276,
+    "path" : "~/tra_business_cycle/rev_sectors_s.R",
+    "project_path" : "rev_sectors_s.R",
+    "properties" : {
+        "source_window_id" : "",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/tra_business_cycle",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
